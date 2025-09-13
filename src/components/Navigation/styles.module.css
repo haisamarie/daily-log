@@ -11,7 +11,7 @@
 }
 .navigationItem a {
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
 .navigationItem a:hover {
   text-decoration: underline;
