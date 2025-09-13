@@ -1,13 +1,16 @@
 import Hero from '@/components/Hero';
 import Main from '@/components/Main';
 import Profile from '@/components/Profile';
+import Button from '@/components/Button';
 import styles from './style.module.css';
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Main>ここにコンテンツが表示される</Main>
+      <Main>
+        <Button type="button">Click Me</Button>
+      </Main>
       <Profile
         name="鞠"
         description="Web Designer → Frontend Engineer"
