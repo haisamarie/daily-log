@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import styles from "./styles.module.scss";
+import styles from "./style.module.css";
 
 const Home = () => {
   return (
