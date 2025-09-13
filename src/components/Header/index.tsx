@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
+import styles from './styles.module.css'
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
        <Navigation
         items={[
           { src: "/", label: "Home" },

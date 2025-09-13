@@ -1,9 +1,9 @@
+import styles from './styles.module.css'
 
 type NavigationItem = {
   src: string;
   label: string;
 };
-
 
 type Navigation = {
    items: NavigationItem[];
@@ -12,9 +12,9 @@ type Navigation = {
 const Navigation = ({ items }: Navigation) => {
     return (
         <nav>
-            <ul>
+            <ul className={styles.navigation}>
                 {items.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} className={styles.navigationItem}>
                         <a href={item.src}>{item.label}</a>
                     </li>
                 ))}
