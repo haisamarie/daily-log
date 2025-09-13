@@ -1,0 +1,21 @@
+.cardItemTitle {
+  font-size: 20px;
+}
+.cardItemDate {
+  font-size: 14px;
+  color: gray;
+}
+.cardItemContent {
+  font-size: 16px;
+}
+.cardItemImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.cardItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}

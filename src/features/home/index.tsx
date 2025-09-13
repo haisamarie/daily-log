@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import Main from '@/components/Main';
 import Profile from '@/components/Profile';
 import Button from '@/components/Button';
+import Card from '@/components/Card';
 import styles from './style.module.css';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <Hero />
       <Main>
+        <Card />
         <Button type="button">Click Me</Button>
       </Main>
       <Profile

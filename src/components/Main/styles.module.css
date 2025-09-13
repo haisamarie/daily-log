@@ -7,3 +7,14 @@
   margin: 0 auto;
   width: 90%;
 }
+
+@media (max-width: 768px) {
+  .main {
+    padding-block: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    padding-block: 20px;
+  }
+}
