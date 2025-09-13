@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../css/globals.css";
+import "../css/style.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <div className="main-container grid min-h-[100lvh] grid-rows-[auto_1fr_auto]">
+        <div className="font-[family-name:var(--font-yomogi)]">
           <Header />
           {children}
           <Footer />

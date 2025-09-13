@@ -14,6 +14,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/yomogi": "^5.2.6",
     "next": "15.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -35,12 +36,12 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-   "lint-staged": {
-   "src/**/*.{js,jsx,ts,tsx}": [
-     "eslint --fix",
-     "prettier --write"
-   ]
- },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "volta": {
     "node": "22.19.0",
     "npm": "11.6.0"
