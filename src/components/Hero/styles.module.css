@@ -2,15 +2,27 @@
   position: relative;
   z-index: -1;
   width: 100%;
-  height: 520px;
+  height: 420px;
+
 }
-.heroTitle {
+.heroText {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  padding: 0 16px;
+  width: 100%;
+}
+.heroTitle {
   color: white;
-  font-size:50px
+  font-size:50px;
+  margin-bottom: 16px;
+}
+.heroDescription {
+  color: white;
+  font-size:18px;
 }
 .strong {
   font-size:80px
@@ -22,12 +34,9 @@
 }
 @media (max-width: 480px) {
   .hero {
-    height: 240px;
+    height: 320px;
   }
-  .heroTitle {
-    font-size: 20px;
-  }
-  .strong {
-    font-size: 40px;
-  }
+  .heroDescription {
+  text-align: left;
+}
 }

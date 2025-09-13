@@ -4,8 +4,11 @@ import styles from './styles.module.css'
 const Hero = () => {
   return (
     <div className={styles.hero}>
-      <h1 className={styles.heroTitle}><span className={styles.strong}>鞠</span>の記録</h1>
-      <Image className={styles.heroImage} src="/images/hero.png" alt="" width={1400} height={520} />
+      <div className={styles.heroText}>
+        <h1 className={styles.heroTitle}><span className={styles.strong}>鞠</span>の記録</h1>
+        <p className={styles.heroDescription}>キャッチアップした技術的な内容をアップしていきます。</p>
+      </div>
+      <Image className={styles.heroImage} src="/images/hero.png" alt="" width={1400} height={420} />
     </div>
   );
 };
