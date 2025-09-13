@@ -1,14 +1,14 @@
-import Navigation from "@/components/Navigation";
-import styles from './styles.module.css'
+import Navigation from '@/components/Navigation';
+import styles from './styles.module.css';
 
 const Header = () => {
   return (
     <header className={styles.header}>
-       <Navigation
+      <Navigation
         items={[
-          { src: "/", label: "Home" },
-          { src: "/list", label: "List" },
-          { src: "/contact", label: "Contact" },
+          { src: '/', label: 'Home' },
+          { src: '/list', label: 'List' },
+          { src: '/contact', label: 'Contact' },
         ]}
       />
     </header>

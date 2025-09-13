@@ -1,0 +1,45 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-image: url('/images/profile_bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+}
+.profileInner {
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+.profileInner:after {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  content: '';
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  border: 1px solid #000;
+}
+.profileTitle {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.profileText {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+.profileContent {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}

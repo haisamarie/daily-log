@@ -3,7 +3,6 @@
   z-index: -1;
   width: 100%;
   height: 420px;
-
 }
 .heroText {
   position: absolute;
@@ -17,15 +16,15 @@
 }
 .heroTitle {
   color: white;
-  font-size:50px;
+  font-size: 50px;
   margin-bottom: 16px;
 }
 .heroDescription {
   color: white;
-  font-size:18px;
+  font-size: 18px;
 }
 .strong {
-  font-size:80px
+  font-size: 80px;
 }
 .heroImage {
   width: 100%;
@@ -37,6 +36,6 @@
     height: 320px;
   }
   .heroDescription {
-  text-align: left;
-}
+    text-align: left;
+  }
 }
