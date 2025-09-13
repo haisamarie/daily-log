@@ -8,7 +8,15 @@ const Home = () => {
     <>
       <Hero />
       <Main>ここにコンテンツが表示される</Main>
-      <Profile />
+      <Profile
+        name="鞠"
+        description="Web Designer → Frontend Engineer"
+        imageUrl="/images/girl.png"
+        sns={[
+          { platform: 'Zenn', url: 'https://zenn.dev/mari_tt' },
+          { platform: 'GitHub', url: 'https://github.com/haisamarie' },
+        ]}
+      />
     </>
   );
 };

@@ -23,6 +23,7 @@
   width: calc(100% - 16px);
   height: calc(100% - 16px);
   border: 1px solid #000;
+  pointer-events: none;
 }
 .profileTitle {
   font-size: 48px;
@@ -58,7 +59,40 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 90%;
+  margin: 0 auto;
   gap: 5%;
+}
+.profileSns {
+  display: flex;
+  padding: 0;
+}
+.profileSnsItem {
+  position: relative;
+  margin-top: 20px;
+}
+.profileSnsItem:not(:last-child) {
+  margin-right: 16px;
+  padding-right: 16px;
+}
+.profileSnsItem:not(:last-child)::after {
+  content: '';
+  width: 1px;
+  height: 16px;
+  background-color: gray;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.profileSnsItem a {
+  text-decoration: none;
+  color: gray;
+  font-size: 16px;
+  line-height: 1;
+}
+.profileSnsItem a:hover {
+  text-decoration: underline;
 }
 @media (max-width: 768px) {
   .profileText {
@@ -71,6 +105,7 @@
     margin: 0 auto;
   }
   .profileContent {
+    max-width: 100%;
     flex-direction: column;
     gap: 0;
   }
