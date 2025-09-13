@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <div className="font-[family-name:var(--font-yomogi)]">
+        <div>
           <Header />
           {children}
           <Footer />
