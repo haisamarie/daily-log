@@ -1,0 +1,9 @@
+.main {
+  background-color: #fff;
+  height: 100%;
+  overflow: scroll;
+  padding-block: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+}
