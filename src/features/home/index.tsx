@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
+import styles from "./styles.module.scss";
 
 const Home = () => {
   return (
-    <main>
+    <main className={styles["wrap"]}>
       <Hero />
     </main>
   );
