@@ -10,10 +10,10 @@
 }
 .profileInner {
   background-color: rgba(255, 255, 255, 0.8);
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
-  padding: 20px;
   position: relative;
+  padding: 60px;
 }
 .profileInner:after {
   position: absolute;
@@ -27,19 +27,57 @@
 .profileTitle {
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .profileText {
   font-size: 18px;
   line-height: 1.6;
-  text-align: center;
-  max-width: 600px;
-  margin-top: 10px;
+  text-align: left;
+  order: 2;
+  width: 50%;
+}
+.profileName {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.profileDescription {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.profileImage {
+  order: 1;
+  max-width: 100%;
+  height: auto;
+  width: 45%;
 }
 
 .profileContent {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  margin-top: 20px;
+  gap: 5%;
+}
+@media (max-width: 768px) {
+  .profileText {
+    width: 100%;
+  }
+  .profileImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .profileContent {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileInner {
+    padding: 30px;
+  }
 }

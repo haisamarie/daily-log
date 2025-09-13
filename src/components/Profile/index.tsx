@@ -9,7 +9,10 @@ const Profile = () => {
         <div className={styles.profileContent}>
           <div className={styles.profileText}>
             <p className={styles.profileName}>name</p>
-            <p className={styles.profileDescription}>詳細文詳細文詳細文詳細文詳細文詳細文</p>
+            <p className={styles.profileDescription}>
+              詳細文詳細文詳細文詳細文詳細文詳細文詳細文詳細文詳細文詳細文詳細文詳細文
+              詳細文詳細文詳細文詳細文詳細文詳細文 詳細文詳細文詳細文詳細文詳細文詳細文
+            </p>
           </div>
           <Image
             className={styles.profileImage}
