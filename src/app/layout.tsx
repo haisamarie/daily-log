@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "@/app/globals.css";
-import "@/app/css/style.css";
+import "../css/globals.css";
+import "../css/style.css";
 
-import Header from "@/app/components/Layout/Header";
-import Footer from "@/app/components/Layout/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "鞠の記録",
