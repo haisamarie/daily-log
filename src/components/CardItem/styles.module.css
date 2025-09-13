@@ -1,5 +1,9 @@
 .cardItemTitle {
   font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
 }
 .cardItemDate {
   font-size: 14px;
@@ -12,6 +16,12 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+.cardItemDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
 }
 .cardItemContent {
   display: flex;
