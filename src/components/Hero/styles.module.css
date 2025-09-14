@@ -13,6 +13,7 @@
   text-align: center;
   padding: 0 16px;
   width: 100%;
+  max-width: 800px;
 }
 .heroTitle {
   color: white;
@@ -30,6 +31,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
 }
 @media (max-width: 480px) {
   .hero {
