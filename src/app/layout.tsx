@@ -18,11 +18,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <div>
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
