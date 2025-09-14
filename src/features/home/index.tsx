@@ -3,7 +3,6 @@ import Main from '@/components/Main';
 import Profile from '@/components/Profile';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
-import styles from './style.module.css';
 
 const Home = () => {
   return (
@@ -11,7 +10,7 @@ const Home = () => {
       <Hero />
       <Main>
         <Card />
-        <Button type="button">Click Me</Button>
+        <Button type="button">もっと見る</Button>
       </Main>
       <Profile
         name="鞠"
