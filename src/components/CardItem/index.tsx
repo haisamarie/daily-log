@@ -1,5 +1,4 @@
-import Image from 'next/image';
-
+import { time } from 'console';
 import styles from './styles.module.css';
 
 type Props = {
@@ -12,14 +11,13 @@ type Props = {
 const CardItem = ({ title, date, description, imageUrl }: Props) => {
   return (
     <div className={styles.cardItem}>
-      <Image
+      <img
         className={styles.cardItemImage}
         src={imageUrl || '/images/img.png'}
         alt=""
         width={360}
         height={240}
       />
-
       <div className={styles.cardItemContent}>
         <h3 className={styles.cardItemTitle}>{title}</h3>
         <p className={styles.cardItemDate}>

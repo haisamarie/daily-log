@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './styles.module.css';
 type Props = {
   name: string;
@@ -26,13 +25,11 @@ const Profile = ({ name, description, imageUrl, sns }: Props) => {
               ))}
             </ul>
           </div>
-          <Image
-            className={styles.profileImage}
-            src={imageUrl || '/images/girl.png'}
-            alt=""
-            width={400}
-            height={353}
-          />
+          <picture className={styles.profileImage}>
+            <source type="image/avif" srcSet={imageUrl || '/images/girl.avif'} />
+            <source type="image/webp" srcSet={imageUrl || '/images/girl.webp'} />
+            <img src={imageUrl || '/images/girl.png'} alt="" width={400} height={353} />
+          </picture>
         </div>
       </div>
     </div>

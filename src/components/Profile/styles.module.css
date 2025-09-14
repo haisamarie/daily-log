@@ -48,10 +48,13 @@
   line-height: 1.6;
 }
 .profileImage {
+  width: 45%;
   order: 1;
   max-width: 100%;
+}
+.profileImage img {
+  width: 100%%;
   height: auto;
-  width: 45%;
 }
 
 .profileContent {
@@ -101,8 +104,10 @@
   .profileImage {
     width: 100%;
     max-width: 300px;
+  }
+  .profileImage img {
+    width: 100%;
     height: auto;
-    margin: 0 auto;
   }
   .profileContent {
     max-width: 100%;
