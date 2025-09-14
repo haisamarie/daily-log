@@ -16,6 +16,8 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  border: solid 1px #000;
+  background-color: #fff;
 }
 .cardItemDescription {
   display: -webkit-box;
