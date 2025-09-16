@@ -5,10 +5,10 @@ import matter from 'gray-matter';
 const POSTS_DIR = path.join(process.cwd(), 'src', 'posts');
 
 // 本文から1段落目を抜粋して excerpt を生成
-function extractExcerpt(markdown: string): string | undefined {
+const extractExcerpt = (markdown: string): string | undefined => {
   const firstParagraph = markdown.trim().split(/\n{2,}/)[0];
   return firstParagraph ? firstParagraph : undefined;
-}
+};
 
 export type PostMeta = {
   slug: string; // URL 用
