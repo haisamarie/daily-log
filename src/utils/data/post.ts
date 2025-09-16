@@ -1,4 +1,13 @@
 import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+const POSTS_DIR = path.join(process.cwd(), 'src', 'posts');
+
+function extractExcerpt(markdown: string): string | undefined {
+  const firstParagraph = markdown.trim().split(/\n{2,}/)[0];
+  return firstParagraph ? firstParagraph : undefined;
+}
 
 export type PostMeta = {
   slug: string; // URL 用
