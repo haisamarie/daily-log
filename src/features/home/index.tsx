@@ -3,13 +3,16 @@ import Main from '@/components/Main';
 import Profile from '@/components/Profile';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import { getAllPosts } from '@/utils/data/post';
 
 const Home = () => {
+  const posts = getAllPosts(['slug', 'title', 'date']);
+  console.log(posts);
   return (
     <>
       <Hero />
       <Main>
-        <Card />
+        <Card items={posts} />
         <Button type="button">もっと見る</Button>
       </Main>
       <Profile

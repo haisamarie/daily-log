@@ -1,4 +1,3 @@
-import { time } from 'console';
 import styles from './styles.module.css';
 
 type Props = {
