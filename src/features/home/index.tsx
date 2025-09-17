@@ -3,13 +3,20 @@ import Main from '@/components/Main';
 import Profile from '@/components/Profile';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import { getAllPosts } from '@/utils/data/post';
 
 const Home = () => {
+  const posts = getAllPosts(['slug', 'title', 'date']);
   return (
     <>
       <Hero />
       <Main>
-        <Card />
+        {posts.map((post) => (
+          <div key={post.slug}>
+            <h2>{post.title}</h2>
+            <time dateTime={post.date}>{post.date}</time>
+          </div>
+        ))}
         <Button type="button">もっと見る</Button>
       </Main>
       <Profile

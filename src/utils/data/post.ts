@@ -2,25 +2,61 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const POSTS_DIR = path.join(process.cwd(), 'src', 'posts');
-
-// 本文から1段落目を抜粋して excerpt を生成
-const extractExcerpt = (markdown: string): string | undefined => {
-  const firstParagraph = markdown.trim().split(/\n{2,}/)[0];
-  return firstParagraph ? firstParagraph : undefined;
+type Post = {
+  slug: string;
+  content: string;
+  title: string;
+  date: string;
 };
 
-export type PostMeta = {
-  slug: string; // URL 用
-  title: string; // 記事タイトル
-  date?: string; // 公開日 (YYYY-MM-DD 推奨)
-  tags?: string[]; // タグ (任意)
-  excerpt?: string; // 記事冒頭のサマリー
+//記事ディレクトリの絶対パス
+const postsDirectory = path.join(process.cwd(), 'content', 'posts');
+
+/**
+ * postsDirectory 以下のディレクトリ名を取得する
+ */
+export const getPostSlugs = () => {
+  const allDirents = fs.readdirSync(postsDirectory, { withFileTypes: true });
+  return allDirents.filter((dirent) => dirent.isDirectory()).map(({ name }) => name);
 };
 
-const getAllSlug = (dirPath: string): string[] => {
-  return fs.readdirSync(dirPath).map((fileName) => {
-    return fileName.replace(/\.mdx?$/, '');
+/**
+ * 指定したフィールド名から、記事のフィールドの値を取得する
+ */
+export const getPostBySlug = (slug: string, fields: string[] = []) => {
+  const fullPath = path.join(postsDirectory, slug, 'index.md');
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
+
+  const items: Post = {
+    slug: '',
+    content: '',
+    title: '',
+    date: '',
+  };
+
+  fields.forEach((field) => {
+    if (field === 'slug') {
+      items[field] = slug;
+    }
+    if (field === 'content') {
+      items[field] = content;
+    }
+    if (field === 'title' || field === 'date') {
+      items[field] = data[field];
+    }
   });
+  return items;
 };
-export default getAllSlug;
+
+/**
+ * すべての記事について、指定したフィールドの値を取得して返す
+ * @param fields 取得するフィールド
+ */
+export function getAllPosts(fields: string[] = []) {
+  const slugs = getPostSlugs();
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
+  return posts;
+}
