@@ -7,16 +7,12 @@ import { getAllPosts } from '@/utils/data/post';
 
 const Home = () => {
   const posts = getAllPosts(['slug', 'title', 'date']);
+  console.log(posts);
   return (
     <>
       <Hero />
       <Main>
-        {posts.map((post) => (
-          <div key={post.slug}>
-            <h2>{post.title}</h2>
-            <time dateTime={post.date}>{post.date}</time>
-          </div>
-        ))}
+        <Card items={posts} />
         <Button type="button">もっと見る</Button>
       </Main>
       <Profile

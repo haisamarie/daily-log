@@ -1,8 +1,7 @@
 ---
-title: 'Hello World'
+title: 'ここに記事のタイトルが入るよ'
 date: '2025-09-15'
 tags: ['Blog', 'Next.js']
-draft: false
 ---
 
 # 見出し
