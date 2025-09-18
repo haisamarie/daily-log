@@ -7,6 +7,7 @@ type Post = {
   content: string;
   title: string;
   date: string;
+  description: string;
 };
 
 //記事ディレクトリの絶対パス
@@ -33,6 +34,7 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
     content: '',
     title: '',
     date: '',
+    description: '',
   };
 
   fields.forEach((field) => {
@@ -42,7 +44,7 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
     if (field === 'content') {
       items[field] = content;
     }
-    if (field === 'title' || field === 'date') {
+    if (field === 'title' || field === 'date' || field === 'description') {
       items[field] = data[field];
     }
   });

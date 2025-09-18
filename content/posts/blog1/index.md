@@ -1,6 +1,7 @@
 ---
 title: 'ここに記事のタイトルが入るよ'
 date: '2025-09-15'
+description: 'ここにsubtitleが入るよ'
 ---
 
 # 見出し
