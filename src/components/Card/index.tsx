@@ -14,7 +14,7 @@ const Card = ({ items }: CardProps) => {
   return (
     <div className={styles.card}>
       {items.map(({ slug, title, date, description }) => (
-        <CardItem key={slug} title={title} date={date} description={description} />
+        <CardItem slug={slug} key={slug} title={title} date={date} description={description} />
       ))}
     </div>
   );

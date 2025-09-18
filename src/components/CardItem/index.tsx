@@ -1,15 +1,17 @@
 import styles from './styles.module.css';
+import Link from 'next/link';
 
 type Props = {
+  slug: string;
   title: string;
   date: string;
   description?: string;
   imageUrl?: string;
 };
 
-const CardItem = ({ title, date, description, imageUrl }: Props) => {
+const CardItem = ({ slug, title, date, description, imageUrl }: Props) => {
   return (
-    <div className={styles.cardItem}>
+    <Link href={`/blog/${slug}`} className={styles.cardItem}>
       <img
         className={styles.cardItemImage}
         src={imageUrl || '/images/img.png'}
@@ -24,7 +26,7 @@ const CardItem = ({ title, date, description, imageUrl }: Props) => {
         </p>
         <p className={styles.cardItemDescription}>{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 export default CardItem;
