@@ -2,14 +2,13 @@ import styles from './styles.module.css';
 
 type Props = {
   title?: string;
-  description?: string;
+  subText?: string;
   imageUrl?: string;
-  isPost?: boolean;
 };
 
-const Hero = ({ title, description, imageUrl, isPost }: Props) => {
+const Hero = ({ title, subText, imageUrl }: Props) => {
   return (
-    <div className={isPost ? `${styles.hero} ${styles.postHero}` : styles.hero}>
+    <div className={styles.hero}>
       <div className={styles.heroText}>
         {title ? (
           <h1 className={styles.heroTitle}>{title}</h1>
@@ -18,7 +17,7 @@ const Hero = ({ title, description, imageUrl, isPost }: Props) => {
             <span className={styles.strong}>鞠</span>の記録
           </h1>
         )}
-        <p className={styles.heroDescription}>{description}</p>
+        <p className={styles.heroDescription}>{subText}</p>
       </div>
       {imageUrl ? (
         <img src={imageUrl} alt="" width={1400} height={420} className={styles.heroImage} />

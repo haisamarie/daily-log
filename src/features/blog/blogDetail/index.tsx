@@ -4,7 +4,7 @@ import Main from '@/components/Main';
 const BlogDetail = () => {
   return (
     <>
-      <Hero title="blog title" imageUrl="/images/pc.jpg" />
+      <Hero title="blog title" subText="2021.11.1" imageUrl="/images/pc.jpg" />
       <Main>
         <h3>aaaa</h3>
         <p>

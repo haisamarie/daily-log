@@ -7,8 +7,8 @@ const Header = () => {
       <Navigation
         items={[
           { src: '/', label: 'Home' },
-          { src: '/list', label: 'List' },
-          { src: '/contact', label: 'Contact' },
+          //{ src: '/list', label: 'List' },
+          //{ src: '/contact', label: 'Contact' },
         ]}
       />
     </header>
