@@ -9,7 +9,7 @@ const Home = () => {
   console.log(posts);
   return (
     <>
-      <Hero />
+      <Hero description="キャッチアップした技術的な内容をアップしていきます。" />
       <Main>
         <Card items={posts} />
       </Main>

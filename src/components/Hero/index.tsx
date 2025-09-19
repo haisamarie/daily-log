@@ -4,15 +4,12 @@ type Props = {
   title?: string;
   description?: string;
   imageUrl?: string;
+  isPost?: boolean;
 };
 
-const Hero = ({
-  title,
-  description = ' キャッチアップした技術的な内容をアップしていきます。',
-  imageUrl,
-}: Props) => {
+const Hero = ({ title, description, imageUrl, isPost }: Props) => {
   return (
-    <div className={styles.hero}>
+    <div className={isPost ? `${styles.hero} ${styles.postHero}` : styles.hero}>
       <div className={styles.heroText}>
         {title ? (
           <h1 className={styles.heroTitle}>{title}</h1>
@@ -29,7 +26,7 @@ const Hero = ({
         <picture className={styles.heroImage}>
           <source type="image/avif" srcSet="/images/hero.avif" />
           <source type="image/webp" srcSet="/images/hero.webp" />
-          <img src="/images/hero.png" alt="" width={1400} height={420} />
+          <img src="/images/hero.png" alt="サムネイル画像" width={1400} height={420} />
         </picture>
       )}
     </div>

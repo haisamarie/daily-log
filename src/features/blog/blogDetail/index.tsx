@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 const BlogDetail = () => {
   return (
     <>
-      <Hero />
+      <Hero title="blog title" imageUrl="/images/pc.jpg" />
       <Main>
         <Button type="button">もっと見る</Button>
       </Main>
