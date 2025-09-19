@@ -5,7 +5,7 @@ import Card from '@/components/Card';
 import { getAllPosts } from '@/utils/data/post';
 
 const Home = () => {
-  const posts = getAllPosts();
+  const posts = getAllPosts(['slug', 'title', 'date']);
   console.log(posts);
   return (
     <>
