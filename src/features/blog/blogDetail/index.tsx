@@ -6,6 +6,7 @@ type Post = {
   title: string;
   date: string;
   description?: string;
+  thumbnail?: string;
 };
 
 type BlogDetailProps = {
@@ -14,10 +15,10 @@ type BlogDetailProps = {
 };
 
 const BlogDetail = ({ post, contentHtml }: BlogDetailProps) => {
-  const { title, date } = { ...post };
+  const { title, date, thumbnail } = post;
   return (
     <>
-      <Hero title={title} subText={date} imageUrl="/images/pc.jpg" />
+      <Hero title={title} subText={date} thumbnail={thumbnail} />
       <Main>
         <div className={styles.wrap}>
           <div className={styles.prose} dangerouslySetInnerHTML={{ __html: contentHtml }} />

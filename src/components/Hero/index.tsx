@@ -3,10 +3,10 @@ import styles from './styles.module.css';
 type Props = {
   title?: string;
   subText?: string;
-  imageUrl?: string;
+  thumbnail?: string;
 };
 
-const Hero = ({ title, subText, imageUrl }: Props) => {
+const Hero = ({ title, subText, thumbnail }: Props) => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroText}>
@@ -19,8 +19,8 @@ const Hero = ({ title, subText, imageUrl }: Props) => {
         )}
         <p className={styles.heroDescription}>{subText}</p>
       </div>
-      {imageUrl ? (
-        <img src={imageUrl} alt="" width={1400} height={420} className={styles.heroImage} />
+      {thumbnail ? (
+        <img src={thumbnail} alt="" width={1400} height={420} className={styles.heroImage} />
       ) : (
         <picture className={styles.heroImage}>
           <source type="image/avif" srcSet="/images/hero.avif" />
