@@ -5,7 +5,7 @@ import path from 'path';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogDetailPage({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   const processedContent = await remark().use(remarkHtml).process(post.content);
   const contentHtml = processedContent.toString();
   return <BlogDetail post={post} contentHtml={contentHtml} />;
