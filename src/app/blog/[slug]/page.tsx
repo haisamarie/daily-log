@@ -1,7 +1,5 @@
 import BlogDetail from '@/features/blog/blogDetail';
 import { getAllSlugs, getPostBySlug } from '@/utils/data/post';
-import fs from 'fs';
-import path from 'path';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
 type Props = {

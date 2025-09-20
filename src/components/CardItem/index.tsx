@@ -6,15 +6,15 @@ type Props = {
   title: string;
   date: string;
   description?: string;
-  imageUrl?: string;
+  thumbnail?: string;
 };
 
-const CardItem = ({ slug, title, date, description, imageUrl }: Props) => {
+const CardItem = ({ slug, title, date, description, thumbnail }: Props) => {
   return (
     <Link href={`/blog/${slug}`} className={styles.cardItem}>
       <img
         className={styles.cardItemImage}
-        src={imageUrl || '/images/img.png'}
+        src={thumbnail || '/images/img.png'}
         alt=""
         width={360}
         height={240}

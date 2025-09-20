@@ -1,6 +1,7 @@
 ---
 title: 'Hello World'
 date: '2025-09-30'
+thumbnail: '/images/posts/blog1/pc.jpg'
 ---
 
 ## 見出しがここにはい r ます
@@ -11,3 +12,5 @@ date: '2025-09-30'
 ```
 console.log(aaa)
 ```
+
+![カバー画像](/images/posts/blog1/pc.jpg)
