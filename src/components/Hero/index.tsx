@@ -2,15 +2,11 @@ import styles from './styles.module.css';
 
 type Props = {
   title?: string;
-  description?: string;
+  subText?: string;
   imageUrl?: string;
 };
 
-const Hero = ({
-  title,
-  description = ' キャッチアップした技術的な内容をアップしていきます。',
-  imageUrl,
-}: Props) => {
+const Hero = ({ title, subText, imageUrl }: Props) => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroText}>
@@ -21,7 +17,7 @@ const Hero = ({
             <span className={styles.strong}>鞠</span>の記録
           </h1>
         )}
-        <p className={styles.heroDescription}>{description}</p>
+        <p className={styles.heroDescription}>{subText}</p>
       </div>
       {imageUrl ? (
         <img src={imageUrl} alt="" width={1400} height={420} className={styles.heroImage} />
@@ -29,7 +25,7 @@ const Hero = ({
         <picture className={styles.heroImage}>
           <source type="image/avif" srcSet="/images/hero.avif" />
           <source type="image/webp" srcSet="/images/hero.webp" />
-          <img src="/images/hero.png" alt="" width={1400} height={420} />
+          <img src="/images/hero.png" alt="サムネイル画像" width={1400} height={420} />
         </picture>
       )}
     </div>

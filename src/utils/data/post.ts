@@ -1,62 +1,60 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-
 type Post = {
   slug: string;
-  content: string;
   title: string;
   date: string;
+  description: string;
+};
+type PostDetail = {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  content: string;
 };
 
-//記事ディレクトリの絶対パス
-const postsDirectory = path.join(process.cwd(), 'content', 'posts');
+// 記事の場所を指定
+const postDirectory = path.join(process.cwd(), 'content/posts');
 
-/**
- * postsDirectory 以下のディレクトリ名を取得する
- */
-export const getPostSlugs = () => {
-  const allDirents = fs.readdirSync(postsDirectory, { withFileTypes: true });
-  return allDirents.filter((dirent) => dirent.isDirectory()).map(({ name }) => name);
-};
+//記事データを取得する関数
+export function getPostData() {
+  const fileNames = fs.readdirSync(postDirectory);
+  const allPostsData: Post[] = fileNames
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '');
+      const fullPath = path.join(postDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf-8');
+      const matterResult = matter(fileContents);
+      return {
+        slug,
+        ...(matterResult.data as Omit<Post, 'slug'>),
+      };
+    })
+    .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
+  return { posts: allPostsData };
+}
 
-/**
- * 指定したフィールド名から、記事のフィールドの値を取得する
- */
-export const getPostBySlug = (slug: string, fields: string[] = []) => {
-  const fullPath = path.join(postsDirectory, slug, 'index.md');
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+// slugを元に記事データを取得する関数
+export function getPostBySlug(slug: string): PostDetail {
+  const fullPath = path.join(postDirectory, `${slug}.md`);
+  const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
 
-  const items: Post = {
-    slug: '',
-    content: '',
-    title: '',
-    date: '',
+  return {
+    slug,
+    title: data.title,
+    date: data.date,
+    description: data.description,
+    content,
   };
+}
 
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = slug;
-    }
-    if (field === 'content') {
-      items[field] = content;
-    }
-    if (field === 'title' || field === 'date') {
-      items[field] = data[field];
-    }
-  });
-  return items;
-};
-
-/**
- * すべての記事について、指定したフィールドの値を取得して返す
- * @param fields 取得するフィールド
- */
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
-  return posts;
+//全記事のslug一覧を返す
+export function getAllSlugs(): string[] {
+  return fs
+    .readdirSync(postDirectory)
+    .filter((f) => f.endsWith('.md'))
+    .map((fileName) => fileName.replace(/\.md$/, ''));
 }

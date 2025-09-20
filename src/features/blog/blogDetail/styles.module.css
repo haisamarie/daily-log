@@ -1,0 +1,118 @@
+/* 記事本文用 */
+.prose {
+  color: #1f2937;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* -------------------- 見出し -------------------- */
+.prose h1 {
+  font-size: 40px;
+  margin-bottom: 13px;
+  font-weight: bold;
+  line-height: 1.3;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 3px;
+}
+
+.prose h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  border-left: 4px solid #b666d2;
+  padding-left: 10px;
+}
+
+.prose h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.prose h4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.prose h5 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.prose h6 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #6b7280;
+}
+/* -------------------- 段落 -------------------- */
+.prose p {
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+/* -------------------- リスト -------------------- */
+.prose ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin-bottom: 24px;
+}
+
+.prose ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin-bottom: 24px;
+}
+
+.prose li {
+  margin-bottom: 8px;
+}
+
+/* -------------------- 引用 -------------------- */
+.prose blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 16px;
+  color: #4b5563;
+  font-style: italic;
+  margin: 24px 0;
+}
+
+/* -------------------- コード -------------------- */
+.prose code {
+  background-color: #f3f4f6;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+}
+
+.prose pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* -------------------- リンク -------------------- */
+.prose a {
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+/* -------------------- 画像 -------------------- */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  margin: 24px 0;
+  border-radius: 6px;
+}

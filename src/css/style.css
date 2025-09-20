@@ -5,6 +5,8 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: #fdf9ff;
+  position: relative;
+  padding-bottom: 50px;
 }
 ul {
   list-style: none;
