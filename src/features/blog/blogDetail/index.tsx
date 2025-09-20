@@ -2,33 +2,25 @@ import Hero from '@/components/Hero';
 import Main from '@/components/Main';
 import styles from './styles.module.css';
 
-const BlogDetail = () => {
+type Post = {
+  title: string;
+  date: string;
+  description?: string;
+};
+
+type BlogDetailProps = {
+  post: Post;
+  contentHtml: string;
+};
+
+const BlogDetail = ({ post, contentHtml }: BlogDetailProps) => {
+  const { title, date } = { ...post };
   return (
     <>
-      <Hero title="blog title" subText="2021.11.1" imageUrl="/images/pc.jpg" />
+      <Hero title={title} subText={date} imageUrl="/images/pc.jpg" />
       <Main>
         <div className={styles.wrap}>
-          <h3>aaaa</h3>
-          <p>
-            だいは畑の運搬ゴーシュげを弓をつっ込ん頭たた。 またあんまり生なたという表情ました。
-            気の毒たたものましもだまたゴーシュの愉快家のなかをはどんと変ますでしと、これだけ風車を落ちがっんでまし。
-            なりすぎおまえはゴーシュがうまくたてさっきの晩の顔家が見ろ第六眼らの病気を睡がいたまし。ボロンボロンは今日ぶっつかっばくださいます。子も六し外のようが血走ってちまうた。
-            ねずみもホール向うや誰が云えていませ。扉は悪評へすぐに笑っが音楽が眼のようへ考えながら口を飛びてうまく譜でさわりといるまし。
-            まるでもういっしょへ扉がしたでし。それすぐと虎へ習えて底がしなた。
-            仲間にしたでし。「セロへします。壁、何が楽器。わから。」
-            みんなはこんどのときのとても前のうちをとまっましん。
-            ゴーシュは楽器におゴーシュがきて下のかっこうをむしってどんなに前笑っせませままでしんまし。ください！」
-          </p>
-          <p>
-            だいは畑の運搬ゴーシュげを弓をつっ込ん頭たた。 またあんまり生なたという表情ました。
-            気の毒たたものましもだまたゴーシュの愉快家のなかをはどんと変ますでしと、これだけ風車を落ちがっんでまし。
-            なりすぎおまえはゴーシュがうまくたてさっきの晩の顔家が見ろ第六眼らの病気を睡がいたまし。ボロンボロンは今日ぶっつかっばくださいます。子も六し外のようが血走ってちまうた。
-            ねずみもホール向うや誰が云えていませ。扉は悪評へすぐに笑っが音楽が眼のようへ考えながら口を飛びてうまく譜でさわりといるまし。
-            まるでもういっしょへ扉がしたでし。それすぐと虎へ習えて底がしなた。
-            仲間にしたでし。「セロへします。壁、何が楽器。わから。」
-            みんなはこんどのときのとても前のうちをとまっましん。
-            ゴーシュは楽器におゴーシュがきて下のかっこうをむしってどんなに前笑っせませままでしんまし。ください！」
-          </p>
+          <div className={styles.prose} dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </div>
       </Main>
     </>

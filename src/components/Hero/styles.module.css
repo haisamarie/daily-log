@@ -53,6 +53,9 @@
   .hero {
     height: 320px;
   }
+  .heroTitle {
+    font-size: 38px;
+  }
   .heroDescription {
     text-align: left;
   }

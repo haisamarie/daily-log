@@ -1,17 +1,20 @@
 import BlogDetail from '@/features/blog/blogDetail';
+import { getAllSlugs, getPostBySlug } from '@/utils/data/post';
 import fs from 'fs';
 import path from 'path';
-
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
+type Props = {
+  params: { slug: string };
+};
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'content', 'posts');
-  const files = fs.readdirSync(postsDirectory);
-
-  return files.map((file) => {
-    const slug = file.replace(/\.md$/, '');
-    return { slug };
-  });
+  const slugs = getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
-export default function BlogDetailPage() {
-  return <BlogDetail />;
+export default async function BlogDetailPage({ params }: Props) {
+  const post = getPostBySlug(params.slug);
+  const processedContent = await remark().use(remarkHtml).process(post.content);
+  const contentHtml = processedContent.toString();
+  return <BlogDetail post={post} contentHtml={contentHtml} />;
 }
