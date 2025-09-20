@@ -2,10 +2,10 @@ import Hero from '@/components/Hero';
 import Main from '@/components/Main';
 import Profile from '@/components/Profile';
 import Card from '@/components/Card';
-import { getAllPosts } from '@/utils/data/post';
+import { getPostData } from '@/utils/data/post';
 
-const Home = () => {
-  const posts = getAllPosts(['slug', 'title', 'date']);
+const Home = async () => {
+  const { posts } = await getPostData();
   console.log(posts);
   return (
     <>
