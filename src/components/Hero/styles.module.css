@@ -48,14 +48,22 @@
   object-fit: cover;
   object-position: bottom center;
 }
-@media (max-width: 480px) {
-  .hero {
-    height: 320px;
-  }
+@media (max-width: 768px) {
   .heroTitle {
     font-size: 34px;
   }
   .strong {
     font-size: 60px;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 380px;
+  }
+  .heroTitle {
+    font-size: 30px;
+  }
+  .strong {
+    font-size: 56px;
   }
 }
