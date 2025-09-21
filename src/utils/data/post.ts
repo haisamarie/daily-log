@@ -37,8 +37,11 @@ export function getPostData() {
 }
 
 // slugを元に記事データを取得する関数
-export function getPostBySlug(slug: string): PostDetail {
+export function getPostBySlug(slug: string): PostDetail | null {
   const fullPath = path.join(postDirectory, `${slug}.md`);
+  if (!fs.existsSync(fullPath)) {
+    return null;
+  }
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
 

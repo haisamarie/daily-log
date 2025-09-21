@@ -89,6 +89,8 @@
 @media (max-width: 768px) {
   .profileText {
     width: 100%;
+    max-width: 300px;
+    padding: 12px;
   }
   .profileImage {
     width: 100%;
