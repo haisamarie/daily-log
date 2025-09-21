@@ -1,6 +1,6 @@
 .cardItemDate {
   font-size: 14px;
-  color: gray;
+  color: #999;
 }
 .cardItemImageWrap {
   position: relative;
@@ -10,6 +10,7 @@
 
 .cardItemTitle {
   font-size: 18px;
+  font-weight: 700;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -30,13 +31,7 @@
 .cardItemContent {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px;
+  gap: 8px;
+  padding: 12px;
   color: #666;
-}
-.cardItem:hover .cardItemDate,
-.cardItem:hover .cardItemContent {
-  color: #b666d2;
-  cursor: pointer;
-  transition: color 0.3s ease;
 }
