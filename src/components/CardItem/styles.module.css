@@ -1,3 +1,10 @@
+.cardItem {
+  background: #fff;
+  border-solid: 3px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .cardItemDate {
   font-size: 14px;
   color: #999;
@@ -6,6 +13,7 @@
   position: relative;
   height: 180px;
   overflow: hidden;
+  border-radius: 8px 8px 0 0;
 }
 
 .cardItemTitle {
@@ -14,7 +22,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   color: #666;
 }
 .cardItemImage {
@@ -22,16 +30,10 @@
   object-fit: cover;
   position: absolute;
 }
-.cardItemDescription {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-}
 .cardItemContent {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 12px;
+  padding: 14px;
   color: #666;
 }
