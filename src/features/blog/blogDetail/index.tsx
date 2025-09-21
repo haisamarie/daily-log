@@ -5,7 +5,6 @@ import styles from './styles.module.css';
 type Post = {
   title: string;
   date: string;
-  description?: string;
   thumbnail?: string;
 };
 

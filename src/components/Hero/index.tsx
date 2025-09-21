@@ -1,4 +1,5 @@
 import styles from './styles.module.css';
+import DefaultImg from '@/assets/images/img.jpg';
 
 type Props = {
   title?: string;
@@ -19,11 +20,13 @@ const Hero = ({ title, subText, thumbnail }: Props) => {
         )}
         <p className={styles.heroDescription}>{subText}</p>
       </div>
-      {thumbnail ? (
-        <img className={styles.heroImage} src={thumbnail} alt="" width={1400} height={420} />
-      ) : (
-        ''
-      )}
+      <img
+        className={styles.heroImage}
+        src={thumbnail ? thumbnail : DefaultImg.src}
+        alt=""
+        width={1400}
+        height={420}
+      />
     </div>
   );
 };

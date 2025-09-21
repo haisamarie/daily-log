@@ -5,14 +5,12 @@ type Post = {
   slug: string;
   title: string;
   date: string;
-  description: string;
   thumbnail?: string;
 };
 type PostDetail = {
   slug: string;
   title: string;
   date: string;
-  description: string;
   content: string;
   thumbnail?: string;
 };
@@ -48,7 +46,6 @@ export function getPostBySlug(slug: string): PostDetail {
     slug,
     title: data.title,
     date: data.date,
-    description: data.description ?? '',
     thumbnail: data.thumbnail,
     content,
   };

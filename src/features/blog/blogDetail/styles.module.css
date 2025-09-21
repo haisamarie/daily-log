@@ -8,7 +8,7 @@
 .prose h1 {
   color: #000;
   font-size: 40px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   font-weight: bold;
   line-height: 1.3;
   border-bottom: 2px solid #e5e7eb;
@@ -18,7 +18,7 @@
 .prose h2 {
   color: #000;
   font-size: 28px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   font-weight: bold;
   border-left: 4px solid #b666d2;
   padding-left: 10px;
@@ -27,21 +27,21 @@
 .prose h3 {
   color: #000;
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   font-weight: 600;
 }
 
 .prose h4 {
   color: #000;
   font-size: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   font-weight: 600;
 }
 
 .prose h5 {
   color: #000;
   font-size: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   font-weight: 500;
   margin-top: 0;
 }
@@ -49,14 +49,14 @@
 .prose h6 {
   color: #000;
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   margin-top: 0;
   font-weight: 500;
   color: #6b7280;
 }
 /* -------------------- 段落 -------------------- */
 .prose p {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   line-height: 1.8;
 }
 
@@ -70,7 +70,7 @@
 .prose ol {
   list-style: decimal;
   padding-left: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 .prose li {
@@ -124,5 +124,5 @@
   border-radius: 6px;
 }
 .prose hr {
-  margin: 24px 0;
+  margin: 60px 0;
 }
