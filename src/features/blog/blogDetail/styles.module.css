@@ -55,10 +55,12 @@
   font-weight: 500;
   color: #6b7280;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .wrap {
     padding: 20px;
   }
+}
+@media (max-width: 480px) {
   .prose h2 {
     font-size: 26px;
   }
