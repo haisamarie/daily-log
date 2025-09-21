@@ -10,11 +10,11 @@
 
 @media (max-width: 768px) {
   .main {
-    padding-block: 40px;
+    padding-block: 30px;
   }
 }
 @media (max-width: 480px) {
   .main {
-    padding-block: 20px;
+    padding-block: 16px;
   }
 }
