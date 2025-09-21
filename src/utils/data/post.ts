@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { toPublicPath } from '@/utils/helper/path';
 type Post = {
   slug: string;
   title: string;
@@ -45,14 +44,12 @@ export function getPostBySlug(slug: string): PostDetail {
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
 
-  const thumbnail = toPublicPath(data.thumbnail);
-
   return {
     slug,
     title: data.title,
     date: data.date,
     description: data.description ?? '',
-    thumbnail,
+    thumbnail: data.thumbnail,
     content,
   };
 }

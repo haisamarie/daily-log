@@ -20,13 +20,9 @@ const Hero = ({ title, subText, thumbnail }: Props) => {
         <p className={styles.heroDescription}>{subText}</p>
       </div>
       {thumbnail ? (
-        <img src={thumbnail} alt="" width={1400} height={420} className={styles.heroImage} />
+        <img className={styles.heroImage} src={thumbnail} alt="" width={1400} height={420} />
       ) : (
-        <picture className={styles.heroImage}>
-          <source type="image/avif" srcSet="/images/hero.avif" />
-          <source type="image/webp" srcSet="/images/hero.webp" />
-          <img src="/images/hero.png" alt="サムネイル画像" width={1400} height={420} />
-        </picture>
+        ''
       )}
     </div>
   );

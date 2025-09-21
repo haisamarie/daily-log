@@ -1,8 +1,11 @@
 import styles from './styles.module.css';
+import GirlImgAvif from '@/assets/images/girl.avif';
+import GirlImgWebp from '@/assets/images/girl.webp';
+import GirlImgPng from '@/assets/images/girl.png';
 type Props = {
   name: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
   sns?: { platform: string; url: string }[];
 };
 
@@ -26,9 +29,9 @@ const Profile = ({ name, description, imageUrl, sns }: Props) => {
             </ul>
           </div>
           <picture className={styles.profileImage}>
-            <source type="image/avif" srcSet={imageUrl || '/images/girl.avif'} />
-            <source type="image/webp" srcSet={imageUrl || '/images/girl.webp'} />
-            <img src={imageUrl || '/images/girl.png'} alt="" width={400} height={353} />
+            <source type="image/avif" srcSet={imageUrl || GirlImgAvif.src} />
+            <source type="image/webp" srcSet={imageUrl || GirlImgWebp.src} />
+            <img src={imageUrl || GirlImgPng.src} alt="" width={400} height={353} />
           </picture>
         </div>
       </div>
