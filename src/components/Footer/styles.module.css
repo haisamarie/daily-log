@@ -5,7 +5,7 @@
   padding: 32px 16px;
   background-color: #0f0021;
   margin-top: 48px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15); /* セクション区切り */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .profileContent {
