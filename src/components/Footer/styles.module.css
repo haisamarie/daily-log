@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
+
 .footer {
   text-align: center;
   padding: 32px 16px;
@@ -11,11 +13,12 @@
   margin: 0 auto;
 }
 .profileTitle {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.6rem;
   margin: 0 0 16px;
   font-weight: 600;
   letter-spacing: 0.05em;
+  font-family: 'Yomogi', cursive;
 }
 
 .profileText {

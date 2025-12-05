@@ -1,5 +1,4 @@
 import Main from '@/components/Main';
-import Profile from '@/components/Profile';
 import Card from '@/components/Card';
 import { getPostData } from '@/utils/data/post';
 import TopMvPng from '@/assets/images/hero.png';
