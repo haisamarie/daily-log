@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: '鞠の記録',
-  description: 'このサイトは私の日々の記録です。',
+  title: 'TECH BLOG',
+  description: 'このサイトは勉強の記録をしたTECH BLOGです。',
 };
 
 export default function RootLayout({

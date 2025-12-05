@@ -16,6 +16,9 @@ const BlogDetail = ({ post, contentHtml }: BlogDetailProps) => {
   return (
     <>
       <h1 className={styles.title}>{title}</h1>
+      <ul className={styles.categories}>
+        <li className={styles.category}>React</li>
+      </ul>
       <p className={styles.date}>
         <time dateTime={date}>{date}</time>
       </p>
