@@ -1,7 +1,6 @@
 .cardItem {
   background: rgb(255, 255, 255, 0.3);
-  border: solid 1px #eadcf4;
-  border-radius: 8px;
+  border: solid 1px #000;
   overflow: hidden;
 }
 
@@ -11,18 +10,19 @@
 }
 .cardItemImageWrap {
   position: relative;
-  height: 180px;
+  height: 160px;
   overflow: hidden;
+  margin: 16px;
 }
 
 .cardItemTitle {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: bold;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 2;
-  color: #666;
+  color: #000;
 }
 .cardItemImage {
   width: 100%;
@@ -34,5 +34,21 @@
   flex-direction: column;
   gap: 12px;
   padding: 16px;
-  color: #666;
+  color: #000;
+}
+.categories {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.category {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+.cardItem:hover {
+  outline: 3px double #000;
+  outline-offset: -3px;
 }

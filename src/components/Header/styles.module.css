@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 .header {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  right: 0;
   width: 100%;
   z-index: 1000;
-  padding-inline: 40px;
+  padding: 20px;
+  border-bottom: solid 3px #000;
+  font-family: 'Yomogi', cursive;
+  margin-bottom: 60px;
+}
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
 }

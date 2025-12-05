@@ -1,4 +1,3 @@
-import Hero from '@/components/Hero';
 import Main from '@/components/Main';
 import Profile from '@/components/Profile';
 import Card from '@/components/Card';
@@ -10,21 +9,9 @@ const Home = async () => {
   console.log(TopMvPng);
   return (
     <>
-      <Hero
-        thumbnail={TopMvPng.src}
-        subText="キャッチアップした技術的な内容をアップしていきます。"
-      />
       <Main>
         <Card items={posts} />
       </Main>
-      <Profile
-        name="鞠"
-        description="Web Designer → Frontend Engineer"
-        sns={[
-          { platform: 'Zenn', url: 'https://zenn.dev/mari_tt' },
-          { platform: 'GitHub', url: 'https://github.com/haisamarie' },
-        ]}
-      />
     </>
   );
 };

@@ -27,11 +27,6 @@ const Profile = ({ name, description, imageUrl, sns }: Props) => {
             ))}
           </ul>
         </div>
-        <picture className={styles.profileImage}>
-          <source type="image/avif" srcSet={imageUrl || GirlImgAvif.src} />
-          <source type="image/webp" srcSet={imageUrl || GirlImgWebp.src} />
-          <img src={imageUrl || GirlImgPng.src} alt="" width={400} height={353} />
-        </picture>
       </div>
     </div>
   );

@@ -20,7 +20,14 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <Footer />
+        <Footer
+          name="鞠"
+          description="Web Designer → Frontend Engineer"
+          sns={[
+            { platform: 'Zenn', url: 'https://zenn.dev/mari_tt' },
+            { platform: 'GitHub', url: 'https://github.com/haisamarie' },
+          ]}
+        />
       </body>
     </html>
   );

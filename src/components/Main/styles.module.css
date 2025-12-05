@@ -1,18 +1,6 @@
 .main {
   height: 100%;
-  padding-block: 70px;
   max-width: 1200px;
   margin: 0 auto;
   width: 94%;
-}
-
-@media (max-width: 768px) {
-  .main {
-    padding-block: 30px;
-  }
-}
-@media (max-width: 480px) {
-  .main {
-    padding-block: 16px;
-  }
 }

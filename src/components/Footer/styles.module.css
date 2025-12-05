@@ -1,14 +1,57 @@
 .footer {
   text-align: center;
-  padding: 16px;
+  padding: 32px 16px;
   background-color: #0f0021;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* セクション区切り */
 }
+
+.profileContent {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.profileTitle {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.profileText {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6; /* 読みやすさ改善 */
+}
+
+.profileName {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.profileSns {
+  padding: 0;
+  list-style: none;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.profileSnsItem a {
+  color: #9fd3ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.profileSnsItem a:hover {
+  text-decoration: underline;
+}
+
 .copy {
-  color: white;
+  color: #fff;
   font-size: 12px;
-  text-align: center;
+  opacity: 0.7;
+  margin-top: 24px;
 }

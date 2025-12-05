@@ -1,16 +1,9 @@
-import Navigation from '@/components/Navigation';
 import styles from './styles.module.css';
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Navigation
-        items={[
-          { src: '/', label: 'Home' },
-          //{ src: '/list', label: 'List' },
-          //{ src: '/contact', label: 'Contact' },
-        ]}
-      />
+      <h1 className={styles.logo}>TECH BLOG</h1>
     </header>
   );
 };

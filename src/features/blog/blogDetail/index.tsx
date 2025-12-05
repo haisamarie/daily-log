@@ -17,7 +17,11 @@ const BlogDetail = ({ post, contentHtml }: BlogDetailProps) => {
   const { title, date, thumbnail } = post;
   return (
     <>
-      <Hero title={title} subText={date} thumbnail={thumbnail} />
+      <h1 className={styles.title}>{title}</h1>
+      <p className={styles.date}>
+        <time dateTime={date}>{date}</time>
+      </p>
+
       <Main>
         <div className={styles.wrap}>
           <div className={styles.prose} dangerouslySetInnerHTML={{ __html: contentHtml }} />

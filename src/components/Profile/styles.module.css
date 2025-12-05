@@ -1,9 +1,5 @@
 .profileContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #cba2ca;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 .profileInner {
   max-width: 1000px;
@@ -12,22 +8,18 @@
 }
 
 .profileTitle {
-  color: #fff;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
 }
 .profileText {
   font-size: 18px;
   line-height: 1.6;
   text-align: left;
   order: 2;
-  width: 50%;
-  color: #fff;
 }
 .profileName {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -36,23 +28,16 @@
   line-height: 1.6;
 }
 .profileImage {
-  width: 45%;
   order: 1;
   max-width: 100%;
 }
 .profileImage img {
-  width: 100%%;
+  width: 100%;
   height: auto;
 }
 
 .profileContent {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 90%;
-  margin: 0 auto;
-  gap: 5%;
+  border: solid 1px #000;
 }
 .profileSns {
   display: flex;
