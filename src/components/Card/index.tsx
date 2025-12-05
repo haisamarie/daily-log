@@ -13,8 +13,8 @@ type Item = {
 const Card = ({ items }: CardProps) => {
   return (
     <div className={styles.card}>
-      {items.map(({ slug, title, date, categories }) => (
-        <CardItem slug={slug} key={slug} title={title} date={date} categories={categories} />
+      {items.map(({ slug, title, date, categories }, index) => (
+        <CardItem slug={slug} key={index} title={title} date={date} categories={categories} />
       ))}
     </div>
   );
