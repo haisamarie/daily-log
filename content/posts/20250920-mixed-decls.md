@@ -1,6 +1,7 @@
 ---
 title: 'Sassのmixed-decls警告を自動で解消するStylelintカスタムルールを作ってみた'
 date: '2025-09-20'
+categories: ['Next.js']
 ---
 
 Sass のネスト機能は便利ですが、ネストされたルール（`@media`や入れ子セレクタ）の後に直接プロパティを宣言すると、将来的に挙動が変更される可能性があるため、`mixed-decls`の警告が表示されます。
@@ -90,7 +91,7 @@ export { ruleName, messages };
 
 ### Stylelint への組み込み
 
-1. **カスタムルールのファイルを配置**  
+1. **カスタムルールのファイルを配置**
    プロジェクトルートに`stylelint-custom-rule.js`を追加します。
 
 2. **設定ファイルの編集**

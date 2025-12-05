@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 type Post = {
   title: string;
   date: string;
+  categories?: string[];
 };
 
 type BlogDetailProps = {
@@ -12,12 +13,16 @@ type BlogDetailProps = {
 };
 
 const BlogDetail = ({ post, contentHtml }: BlogDetailProps) => {
-  const { title, date } = post;
+  const { title, date, categories } = post;
   return (
     <>
       <h1 className={styles.title}>{title}</h1>
       <ul className={styles.categories}>
-        <li className={styles.category}>React</li>
+        {categories?.map((category, index) => (
+          <li key={`${category}-${index}`} className={styles.category}>
+            {category}
+          </li>
+        ))}
       </ul>
       <p className={styles.date}>
         <time dateTime={date}>{date}</time>
