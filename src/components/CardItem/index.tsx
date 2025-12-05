@@ -6,22 +6,19 @@ type Props = {
   title: string;
   date: string;
   categories?: string[];
+  summary?: string;
 };
 
-const CardItem = ({ slug, title, date, categories }: Props) => {
+const CardItem = ({ slug, title, date, categories, summary }: Props) => {
   console.log('categories', categories);
   return (
     <Link href={`/blog/${slug}`} className={styles.cardItem}>
       <div className={styles.cardItemContent}>
         <h3 className={styles.cardItemTitle}>{title}</h3>
-
         <p className={styles.cardItemDate}>
           <time dateTime={date}>{date}</time>
         </p>
-        <p>
-          デイヴィッド・エドモンズの『シュリック教授殺害事件』（児玉聡・林和雄
-          監訳、晶文社）刊行記念ブックトークです。登壇者は児玉聡・朱喜哲・吉川浩満の三氏です。オンラインでも参加できます。
-        </p>
+        <p className={styles.cardItemSummary}>{summary}</p>
         <ul className={styles.categories}>
           {categories?.map((category, index) => (
             <li key={`${category}-${index}`} className={styles.category}>

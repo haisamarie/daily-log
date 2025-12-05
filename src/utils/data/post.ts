@@ -6,6 +6,7 @@ type Post = {
   title: string;
   date: string;
   categories?: string[];
+  summary?: string;
 };
 type PostDetail = {
   slug: string;
@@ -27,9 +28,18 @@ export function getPostData() {
       const fullPath = path.join(postDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf-8');
       const matterResult = matter(fileContents);
+
+      const rawSummary = matterResult.content.slice(0, 200);
+
+      // 簡易的にMarkdown記号を除去
+      const summary = rawSummary
+        .replace(/[#_*`>~\-\[\]\(\)!]/g, '') // # * _ ` > ~ - [ ] ( ) ! を削除
+        .replace(/\n+/g, ' ') // 改行をスペースに
+        .trim();
       return {
         slug,
         ...(matterResult.data as Omit<Post, 'slug'>),
+        summary,
       };
     })
     .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));

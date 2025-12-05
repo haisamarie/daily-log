@@ -5,6 +5,7 @@ import TopMvPng from '@/assets/images/hero.png';
 
 const Home = async () => {
   const { posts } = getPostData();
+  console.log('posts:', posts);
   console.log(TopMvPng);
   return (
     <>
