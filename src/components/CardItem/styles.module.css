@@ -21,6 +21,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 2;
+  min-height: 60px;
   color: #000;
 }
 .cardItemImage {
@@ -34,6 +35,8 @@
   gap: 12px;
   padding: 16px;
   color: #000;
+  height: 100%;
+  position: relative;
 }
 .categories {
   display: flex;
@@ -50,4 +53,10 @@
 .cardItem:hover {
   outline: 3px double #000;
   outline-offset: -3px;
+}
+.cardItemSummary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
 }
