@@ -1,15 +1,13 @@
 import styles from './styles.module.css';
 import Link from 'next/link';
-import DefaultImg from '@/assets/images/img.jpg';
 
 type Props = {
   slug: string;
   title: string;
   date: string;
-  thumbnail?: string;
 };
 
-const CardItem = ({ slug, title, date, thumbnail }: Props) => {
+const CardItem = ({ slug, title, date }: Props) => {
   return (
     <Link href={`/blog/${slug}`} className={styles.cardItem}>
       <div className={styles.cardItemContent}>

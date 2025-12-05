@@ -1,7 +1,6 @@
 ---
 title: 'Core Web Vitalsについてまとめ'
 date: '2025-09-21'
-thumbnail: '/images/posts/20250921-core-web-vitals/speed.jpg'
 ---
 
 ## 1. はじめに

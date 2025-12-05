@@ -5,14 +5,12 @@ type Post = {
   slug: string;
   title: string;
   date: string;
-  thumbnail?: string;
 };
 type PostDetail = {
   slug: string;
   title: string;
   date: string;
   content: string;
-  thumbnail?: string;
 };
 
 // 記事の場所を指定
@@ -49,7 +47,6 @@ export function getPostBySlug(slug: string): PostDetail | null {
     slug,
     title: data.title,
     date: data.date,
-    thumbnail: data.thumbnail,
     content,
   };
 }
