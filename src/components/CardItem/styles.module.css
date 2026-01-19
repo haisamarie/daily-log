@@ -1,51 +1,87 @@
 .cardItem {
-  border: solid 1px #000;
+  border: 2px solid #000;
   overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.cardItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #000;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.cardItem:hover::before {
+  transform: scaleY(1);
 }
 
 .cardItemDate {
-  font-size: 14px;
-  color: #999;
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .cardItemTitle {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 2;
   min-height: 60px;
   color: #000;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
 }
+
 .cardItemContent {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 16px;
+  gap: 14px;
+  padding: 20px;
   color: #000;
   height: 100%;
   position: relative;
 }
+
 .categories {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   flex-wrap: wrap;
 }
+
 .category {
   display: inline-block;
   background-color: #000;
   color: #fff;
-  font-size: 12px;
-  padding: 4px 8px;
+  font-size: 10px;
+  padding: 5px 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
 }
+
 .cardItem:hover {
-  outline: 3px double #000;
-  outline-offset: -3px;
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
+
 .cardItemSummary {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 4;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
 }

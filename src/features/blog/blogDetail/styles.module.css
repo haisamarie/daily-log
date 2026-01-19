@@ -1,13 +1,15 @@
 .title {
   text-align: center;
   color: #000;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.5;
-  padding-block: 0.4em;
+  line-height: 1.4;
+  padding-block: 0.5em;
   max-width: 95%;
-  margin: 0 auto 0.05em;
+  margin: 0 auto 0.3em;
   max-width: 800px;
+  letter-spacing: -0.01em;
+  position: relative;
 }
 
 @media (max-width: 480px) {
@@ -19,42 +21,82 @@
 .date {
   display: block;
   text-align: center;
-  font-size: 14px;
-  color: #6b7280;
+  font-size: 11px;
+  color: #666;
   margin-bottom: 2em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
+
 .categories {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 0.4em;
+  margin-bottom: 1.5em;
 }
+
 .category {
   display: inline-block;
   background-color: #000;
   color: #fff;
-  font-size: 12px;
-  padding: 4px 8px;
+  font-size: 10px;
+  padding: 5px 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
 }
+
 /* ————————————————————————
    記事コンテナ wrap
 ———————————————————————— */
 .wrap {
-  border: 1px solid #000;
-  padding: 24px;
+  border: 2px solid #000;
+  padding: 32px;
   margin-bottom: 40px;
+  position: relative;
+  background: #fff;
+}
+
+.wrap::before,
+.wrap::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000;
+}
+
+.wrap::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.wrap::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
 }
 
 @media (max-width: 768px) {
   .wrap {
-    padding: 20px;
+    padding: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .wrap {
-    padding: 16px;
+    padding: 20px;
+  }
+  .wrap::before,
+  .wrap::after {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -63,8 +105,9 @@
 ———————————————————————— */
 .prose {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
   word-break: break-word;
+  color: #1a1a1a;
 }
 
 /* 見出しスタイル */
@@ -74,35 +117,61 @@
 .prose h5,
 .prose h6 {
   color: #000;
-  margin-top: 1.5em;
+  margin-top: 2em;
   margin-bottom: 0.75em;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .prose h2 {
   font-size: 28px;
-  border-left: 4px solid #000;
+  border-left: 6px solid #000;
   padding-left: 0.75em;
+  position: relative;
+}
+
+.prose h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #000;
+  margin-left: 10px;
 }
 
 .prose h3 {
-  font-size: 26px;
+  font-size: 24px;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #000;
 }
 
 .prose h4 {
   font-size: 20px;
   font-weight: 600;
+  position: relative;
+  padding-left: 1em;
+}
+
+.prose h4::before {
+  content: '■';
+  position: absolute;
+  left: 0;
+  font-size: 0.8em;
 }
 
 .prose h5 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .prose h6 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  color: #6b7280;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 480px) {
@@ -125,64 +194,117 @@
 
 /* 段落 */
 .prose p {
-  margin-bottom: 1em;
-  font-size: 14px;
-  line-height: 1.5;
+  margin-bottom: 1.5em;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
 /* リスト */
 .prose ul,
 .prose ol {
-  padding-left: 24px;
-  margin-bottom: 1em;
+  padding-left: 28px;
+  margin-bottom: 1.5em;
 }
+
 .prose ul {
-  list-style-type: disc;
+  list-style-type: none;
+}
+
+.prose ul > li {
+  position: relative;
+  padding-left: 1em;
+}
+
+.prose ul > li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 .prose ol {
-  list-style-type: decimal;
+  list-style-type: none;
+  counter-reset: item;
+}
+
+.prose ol > li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.prose ol > li::before {
+  content: counter(item) '.';
+  position: absolute;
+  left: 0;
+  font-weight: 600;
 }
 
 .prose li {
   margin-bottom: 0.5em;
-  text-decoration: dashed;
 }
+
 .prose ul ul,
 .prose ol ul {
-  list-style-type: circle;
+  margin-top: 0.5em;
 }
+
 .prose ul ol,
 .prose ol ol {
-  list-style-type: lower-alpha;
+  margin-top: 0.5em;
 }
 
 /* 引用 */
 .prose blockquote {
-  border-left: 4px solid #d1d5db;
-  padding-left: 1em;
-  color: #4b5563;
+  border-left: 4px solid #000;
+  padding-left: 1.5em;
+  color: #333;
   font-style: italic;
-  margin: 1.5em 0;
+  margin: 2em 0;
+  position: relative;
+  background: #f9f9f9;
+  padding: 1em 1em 1em 1.5em;
+}
+
+.prose blockquote::before {
+  content: '"';
+  font-size: 3em;
+  position: absolute;
+  left: 0.2em;
+  top: 0;
+  line-height: 1;
+  opacity: 0.3;
+  font-family: Georgia, serif;
 }
 
 /* インラインコード */
 .prose code {
-  background-color: #f3f4f6;
-  padding: 2px 4px;
+  background-color: #f0f0f0;
+  padding: 3px 6px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 14px;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  font-weight: 500;
 }
 
 /* ブロックコード */
 .prose pre {
-  background-color: #1f2937;
-  color: #f9fafb;
-  padding: 1em;
-  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 1.5em;
+  border: 2px solid #000;
   overflow-x: auto;
-  margin: 1.5em 0;
+  margin: 2em 0;
+  position: relative;
+}
+
+.prose pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
 }
 
 .prose pre code {
@@ -190,27 +312,51 @@
   padding: 0;
   color: inherit;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.6;
+  border: none;
 }
 
 /* リンク */
 .prose a {
-  text-decoration: underline;
-  color: #9fd3ff;
-  transition: color 0.2s;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  border-bottom: 2px solid #000;
+  transition: all 0.2s;
+  padding-bottom: 1px;
+}
+
+.prose a:hover {
+  background: #000;
+  color: #fff;
 }
 
 /* 画像 */
 .prose img {
   max-width: 100%;
   height: auto;
-  margin: 1.5em 0;
-  border-radius: 6px;
+  margin: 2em 0;
+  border: 2px solid #000;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* 水平線 */
 .prose hr {
-  margin: 2em 0;
+  margin: 3em 0;
   border: none;
-  border-top: 1px solid #d1d5db;
+  height: 2px;
+  background: #eee;
+  position: relative;
+}
+
+.prose hr::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #eee;
 }
